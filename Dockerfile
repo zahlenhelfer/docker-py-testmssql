@@ -15,9 +15,9 @@ RUN curl -sSL -O https://packages.microsoft.com/config/debian/$(grep VERSION_ID 
 RUN dpkg -i packages-microsoft-prod.deb && rm packages-microsoft-prod.deb
 
 RUN apt-get update
-RUN ACCEPT_EULA=Y apt-get install -y msodbcsql18
+RUN ACCEPT_EULA=Y apt-get install -y msodbcsql17
 # optional: for bcp and sqlcmd
-RUN ACCEPT_EULA=Y apt-get install -y mssql-tools18
+RUN ACCEPT_EULA=Y apt-get install -y mssql-tools17
 RUN echo 'export PATH="$PATH:/opt/mssql-tools18/bin"' >> ~/.bashrc
 
 # Copy the Python script
