@@ -24,7 +24,8 @@ RUN echo 'export PATH="$PATH:/opt/mssql-tools18/bin"' >> ~/.bashrc
 COPY test_mssql_connection.py .
 
 # Install Python packages
-RUN pip install pyodbc
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Run the script
 CMD ["python", "test_mssql_connection.py"]
