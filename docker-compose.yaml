@@ -1,0 +1,8 @@
+services:
+  tester:
+    image: ghcr.io/zahlenhelfer/docker-py-testmssql:latest
+    environment:
+      MSSQL_SERVER: ${MSSQL_SERVER}
+      MSSQL_DB: ${MSSQL_DB}
+      MSSQL_USER: ${MSSQL_USER}
+      MSSQL_PASS: ${MSSQL_PASS}
